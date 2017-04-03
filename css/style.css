@@ -27,17 +27,17 @@ html {
 }
 
 #green-button {
-    background-color: green;
+    background-color: #29BF12;
 }
 
 #red-button {
-    background-color: red;
+    background-color: #F21B3F;
 }
 
-#yellow-button {
-    background-color: yellow;
+#violet-button {
+    background-color: #C4008C;
 }
 
 #blue-button {
-    background-color: blue;
+    background-color: #09B2CB;
 }
