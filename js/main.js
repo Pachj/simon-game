@@ -41,7 +41,7 @@ function gameController(enteredField) { // ToDo: needs to be tested
     enteredFieldsCounter++;
     if (enteredFieldsCounter >= sequence.length) {
       enteredFieldsCounter = 0;
-      pickNewField();
+      window.setTimeout(pickNewField, 1000);
     }
   } else {
     if (isStrict) {
@@ -61,7 +61,9 @@ function showSequence() { // ToDo: change the values of the buttons
 
   // shows the actual field
   function showField() {
-    const highlightColors = ['rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)', 'rgba(196, 0, 140, 0.6)', 'rgba(242, 27, 63, 0.6)'];
+    const highlightColors = [
+      'rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)',
+      'rgba(196, 0, 140, 0.6)', 'rgba(242, 27, 63, 0.6)'];
 
     $(actualFieldId).css('background-color', highlightColors[actualField - 1]);
     window.setTimeout(resetField, 1000);
