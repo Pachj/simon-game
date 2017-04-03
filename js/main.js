@@ -4,6 +4,7 @@
 
 // ToDo: disable the buttons
 // ToDo: add sounds
+// ToDo: start button should change to restart
 
 $(document).ready(function() {
   $('#start').click(function() {
@@ -17,9 +18,13 @@ $(document).ready(function() {
   });
 });
 
-let roundCounter = 0;
+// counter of how many fields are in the sequence
+let roundCounter = 0; // ToDo: could be removed? sequence.length
+// the sequence of fields who the player has to repeat
 let sequence = [];
+// whether the game is running
 let isRunning = false;
+// whether the game is in strict mode
 let isStrict = false;
 
 let enteredFieldsCounter = 0;
