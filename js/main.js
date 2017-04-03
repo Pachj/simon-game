@@ -3,18 +3,18 @@
  */
 $(document).ready(function() {
   $('#start').click(function() {
-    startGame();
+    gameController();
   });
 });
 
 let roundCounter = 0;
 let selectedFields = [];
 
-function startGame() {
-  generateNewField();
+function gameController() {
+  pickNewField();
 }
 
-function generateNewField() {
+function pickNewField() {
   const newFieldNumber = Math.floor((Math.random() * 4) + 1);
   selectedFields.push(newFieldNumber);
 }
