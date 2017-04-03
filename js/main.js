@@ -14,7 +14,7 @@ $(document).ready(function() {
 });
 
 let roundCounter = 0;
-let sequence = [2];
+let sequence = [];
 let isRunning = false;
 let isStrict = false;
 
@@ -24,21 +24,33 @@ function startNewGame() {
   pickNewField();
   roundCounter++;
   displayRoundCounter();
-  showSequence();
 }
 
 function pickNewField() {
   const newFieldNumber = Math.floor((Math.random() * 4) + 1);
   sequence.push(newFieldNumber);
+  showSequence();
 }
 
 function displayRoundCounter() {
   $('#round-counter').html(roundCounter);
 }
 
-function gameController(enteredField) {
-  enteredFieldsCounter++;
-
+function gameController(enteredField) { // ToDo: needs to be tested
+  if (enteredField === sequence[enteredFieldsCounter]) {
+    enteredFieldsCounter++;
+    if (enteredFieldsCounter >= sequence.length) {
+      enteredFieldsCounter = 0;
+      pickNewField();
+    }
+  } else {
+    if (isStrict) {
+      // reset the game
+    } else {
+      enteredFieldsCounter = 0;
+      showSequence();
+    }
+  }
 }
 
 // displays the sequence
