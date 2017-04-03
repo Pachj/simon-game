@@ -5,3 +5,30 @@ html {
     font-family: 'Inconsolata', monospace;
     font-size: 10px;
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+}
+
+#green-button {
+    background-color: green;
+}
+
+#red-button {
+    background-color: red;
+}
+
+#yellow-button {
+    background-color: yellow;
+}
+
+#blue-button {
+    background-color: blue;
+}
