@@ -5,6 +5,7 @@
 // ToDo: disable the buttons
 // ToDo: add sounds
 // ToDo: start button should change to restart
+// ToDo: change to objects for the fields
 
 $(document).ready(function() {
   $('#start').click(function() {
@@ -17,6 +18,28 @@ $(document).ready(function() {
     gameController(parseInt($(this).attr('value')));
   });
 });
+let fields = [
+  {
+    id: '#green-button',
+    value: 1,
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+  },
+  {
+    id: '#blue-button',
+    value: 2,
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+  },
+  {
+    id: '#violet-button',
+    value: 3,
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+  },
+  {
+    id: '#red-button',
+    value: 4,
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
+  },
+];
 
 // counter of how many fields are in the sequence
 let roundCounter = 0; // ToDo: could be removed? sequence.length
