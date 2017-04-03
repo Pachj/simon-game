@@ -41,11 +41,13 @@ function gameController(enteredField) {
 
 }
 
-function showSequence() {
+// displays the sequence
+function showSequence() { // ToDo: change the values of the buttons
   let actualField = sequence[0];
   let actualFieldId = changeActualId();
   let fieldCounter = 0;
 
+  // shows the actual field
   function showField() {
     const highlightColors = ['#36FF18', '#0ADFFF', '#FF00B6', '#FF1C42'];
 
@@ -53,6 +55,7 @@ function showSequence() {
     window.setTimeout(resetField, 1000);
   }
 
+  // resets the actual field to its normal color
   function resetField() {
     const originalColors = ['#29BF12', '#09B2CB', '#C4008C', '#F21B3F'];
     $(actualFieldId).css('background-color', originalColors[actualField - 1]);
@@ -66,6 +69,9 @@ function showSequence() {
     }
   }
 
+  /** returns the id of the actual field
+   * @return {String} the id of the actual field
+   */
   function changeActualId() {
     switch (actualField) {
       case 1:
