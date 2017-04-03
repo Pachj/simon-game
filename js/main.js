@@ -1,6 +1,10 @@
 /**
  * Created by Henry on 03.04.17.
  */
+
+// ToDo: disable the buttons
+// ToDo: add sounds
+
 $(document).ready(function() {
   $('#start').click(function() {
     if (!isRunning) {
@@ -16,10 +20,11 @@ $(document).ready(function() {
 let roundCounter = 0;
 let sequence = [];
 let isRunning = false;
-let isStrict = true;
+let isStrict = false;
 
 let enteredFieldsCounter = 0;
 
+// picks a new field
 function pickNewField() {
   const newFieldNumber = Math.floor((Math.random() * 4) + 1);
   sequence.push(newFieldNumber);
@@ -32,7 +37,10 @@ function displayRoundCounter() {
   $('#round-counter').html(roundCounter);
 }
 
-function gameController(enteredField) { // ToDo: needs to be tested
+/** handles the user input and decides what the next step should be
+ * @param {Number} enteredField - the value of the selected field
+ */
+function gameController(enteredField) {
   if (enteredField === sequence[enteredFieldsCounter]) {
     enteredFieldsCounter++;
     if (enteredFieldsCounter >= sequence.length) {
@@ -44,7 +52,7 @@ function gameController(enteredField) { // ToDo: needs to be tested
       resetGame();
     } else {
       enteredFieldsCounter = 0;
-      showSequence();
+      showSequence(); // ToDo: add delay
     }
   }
 }
@@ -98,7 +106,8 @@ function showSequence() { // ToDo: change the values of the buttons
   showField();
 }
 
-function resetGame() {
+// resets the game and starts a new sequence
+function resetGame() { // ToDo: add delay
   roundCounter = 0;
   sequence = [];
   enteredFieldsCounter = 0;
