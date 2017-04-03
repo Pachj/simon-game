@@ -4,7 +4,7 @@
 $(document).ready(function() {
   $('#start').click(function() {
     if (!isRunning) {
-      startNewGame();
+      pickNewField();
     }
   });
 
@@ -20,15 +20,11 @@ let isStrict = false;
 
 let enteredFieldsCounter = 0;
 
-function startNewGame() {
-  pickNewField();
-  roundCounter++;
-  displayRoundCounter();
-}
-
 function pickNewField() {
   const newFieldNumber = Math.floor((Math.random() * 4) + 1);
   sequence.push(newFieldNumber);
+  roundCounter++;
+  displayRoundCounter();
   showSequence();
 }
 
