@@ -3,14 +3,24 @@
  */
 $(document).ready(function() {
   $('#start').click(function() {
-    gameController();
+    if (!isRunning) {
+      startNewGame();
+    }
+  });
+
+  $('.game-field').click(function() {
+    gameController(parseInt($(this).attr('value')));
   });
 });
 
 let roundCounter = 0;
 let selectedFields = [];
+let isRunning = false;
+let isStrict = false;
 
-function gameController() {
+let enteredFieldsCounter = 0;
+
+function startNewGame() {
   pickNewField();
   roundCounter++;
   displayRoundCounter();
@@ -23,4 +33,9 @@ function pickNewField() {
 
 function displayRoundCounter() {
   $('#round-counter').html(roundCounter);
+}
+
+function gameController(enteredField) {
+  enteredFieldsCounter++;
+
 }
