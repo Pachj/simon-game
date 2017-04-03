@@ -12,9 +12,15 @@ let selectedFields = [];
 
 function gameController() {
   pickNewField();
+  roundCounter++;
+  displayRoundCounter();
 }
 
 function pickNewField() {
   const newFieldNumber = Math.floor((Math.random() * 4) + 1);
   selectedFields.push(newFieldNumber);
+}
+
+function displayRoundCounter() {
+  $('#round-counter').html(roundCounter);
 }
