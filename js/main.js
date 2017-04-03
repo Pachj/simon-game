@@ -16,7 +16,7 @@ $(document).ready(function() {
 let roundCounter = 0;
 let sequence = [];
 let isRunning = false;
-let isStrict = false;
+let isStrict = true;
 
 let enteredFieldsCounter = 0;
 
@@ -41,7 +41,7 @@ function gameController(enteredField) { // ToDo: needs to be tested
     }
   } else {
     if (isStrict) {
-      // reset the game
+      resetGame();
     } else {
       enteredFieldsCounter = 0;
       showSequence();
@@ -96,4 +96,12 @@ function showSequence() { // ToDo: change the values of the buttons
   }
 
   showField();
+}
+
+function resetGame() {
+  roundCounter = 0;
+  sequence = [];
+  enteredFieldsCounter = 0;
+
+  pickNewField();
 }
