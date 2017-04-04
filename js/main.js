@@ -132,23 +132,6 @@ function showSequence() {
     }
   }
 
-  /** returns the id of the actual field
-   * @return {String} the id of the actual field
-   */
-  /*
-   function changeActualId() {
-   switch (actualField) {
-   case 1:
-   return '#green-button';
-   case 2:
-   return '#blue-button';
-   case 3:
-   return '#violet-button';
-   case 4:
-   return '#red-button';
-   }
-   }*/
-
   showField();
 }
 
