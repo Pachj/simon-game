@@ -5,7 +5,6 @@
 // ToDo: disable the buttons
 // ToDo: add sounds
 // ToDo: start button should change to restart
-// ToDo: change to objects for the fields
 
 $(document).ready(function() {
   $('#start').click(function() {
@@ -15,28 +14,46 @@ $(document).ready(function() {
   });
 
   $('.game-field').click(function() {
-    gameController(parseInt($(this).attr('value')));
+
+    let enteredField;
+    console.log(this.id);
+    switch (this.id) {
+      case 'green-button':
+        enteredField = fields[0];
+        break;
+      case 'blue-button':
+        enteredField = fields[1];
+        break;
+      case 'violet-button':
+        enteredField = fields[2];
+        break;
+      case 'red-button':
+        enteredField = fields[3];
+        break;
+    }
+    gameController(enteredField);
   });
 });
+
 let fields = [
   {
     id: '#green-button',
-    value: 1,
+    value: 0,
     sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
   },
   {
     id: '#blue-button',
-    value: 2,
+    value: 1,
     sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
   },
   {
     id: '#violet-button',
-    value: 3,
+    value: 2,
     sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
   },
   {
     id: '#red-button',
-    value: 4,
+    value: 3,
     sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
   },
 ];
@@ -48,14 +65,14 @@ let sequence = [];
 // whether the game is running
 let isRunning = false;
 // whether the game is in strict mode
-let isStrict = false;
+let isStrict = true;
 
 let enteredFieldsCounter = 0;
 
 // picks a new field
 function pickNewField() {
-  const newFieldNumber = Math.floor((Math.random() * 4) + 1);
-  sequence.push(newFieldNumber);
+  const newFieldNumber = Math.floor(Math.random() * 4);
+  sequence.push(fields[newFieldNumber]);
   roundCounter++;
   displayRoundCounter();
   showSequence();
@@ -66,7 +83,7 @@ function displayRoundCounter() {
 }
 
 /** handles the user input and decides what the next step should be
- * @param {Number} enteredField - the value of the selected field
+ * @param {Object} enteredField - the object who represents the selected field
  */
 function gameController(enteredField) {
   if (enteredField === sequence[enteredFieldsCounter]) {
@@ -86,9 +103,8 @@ function gameController(enteredField) {
 }
 
 // displays the sequence
-function showSequence() { // ToDo: change the values of the buttons
+function showSequence() {
   let actualField = sequence[0];
-  let actualFieldId = changeActualId();
   let fieldCounter = 0;
 
   // shows the actual field
@@ -97,20 +113,21 @@ function showSequence() { // ToDo: change the values of the buttons
       'rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)',
       'rgba(196, 0, 140, 0.6)', 'rgba(242, 27, 63, 0.6)'];
 
-    $(actualFieldId).css('background-color', highlightColors[actualField - 1]);
+    $(actualField.id).
+        css('background-color', highlightColors[actualField.value]);
     window.setTimeout(resetField, 1000);
   }
 
   // resets the actual field to its normal color
   function resetField() {
     const originalColors = ['#29BF12', '#09B2CB', '#C4008C', '#F21B3F'];
-    $(actualFieldId).css('background-color', originalColors[actualField - 1]);
+    $(actualField.id).
+        css('background-color', originalColors[actualField.value]);
 
     fieldCounter++;
 
     if (fieldCounter < sequence.length) {
       actualField = sequence[fieldCounter];
-      actualFieldId = changeActualId();
       window.setTimeout(showField, 500);
     }
   }
@@ -118,18 +135,19 @@ function showSequence() { // ToDo: change the values of the buttons
   /** returns the id of the actual field
    * @return {String} the id of the actual field
    */
-  function changeActualId() {
-    switch (actualField) {
-      case 1:
-        return '#green-button';
-      case 2:
-        return '#blue-button';
-      case 3:
-        return '#violet-button';
-      case 4:
-        return '#red-button';
-    }
-  }
+  /*
+   function changeActualId() {
+   switch (actualField) {
+   case 1:
+   return '#green-button';
+   case 2:
+   return '#blue-button';
+   case 3:
+   return '#violet-button';
+   case 4:
+   return '#red-button';
+   }
+   }*/
 
   showField();
 }
