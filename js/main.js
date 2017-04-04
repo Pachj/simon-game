@@ -14,9 +14,7 @@ $(document).ready(function() {
   });
 
   $('.game-field').click(function() {
-
     let enteredField;
-    console.log(this.id);
     switch (this.id) {
       case 'green-button':
         enteredField = fields[0];
@@ -65,7 +63,7 @@ let sequence = [];
 // whether the game is running
 let isRunning = false;
 // whether the game is in strict mode
-let isStrict = true;
+let isStrict = false;
 
 let enteredFieldsCounter = 0;
 
