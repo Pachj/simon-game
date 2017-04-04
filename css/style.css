@@ -20,9 +20,14 @@ html {
 .game-field {
     height: 150px;
     width: 150px;
+    border: none;
 }
 
-.game-field {
+.game-field:focus {
+    outline: none;
+}
+
+.game-field { /* ToDo: whats this!? */
     flex-direction: row;
 }
 
