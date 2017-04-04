@@ -29,6 +29,7 @@ $(document).ready(function() {
         enteredField = fields[3];
         break;
     }
+    enteredField.sound.play();
     gameController(enteredField);
   });
 });
@@ -113,6 +114,7 @@ function showSequence() {
 
     $(actualField.id).
         css('background-color', highlightColors[actualField.value]);
+    actualField.sound.play();
     window.setTimeout(resetField, 1000);
   }
 
