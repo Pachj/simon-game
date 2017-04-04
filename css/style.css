@@ -35,14 +35,30 @@ html {
     background-color: #29BF12;
 }
 
+#green-button:active {
+    background-color: rgba(41, 191, 18, 0.6);
+}
+
 #blue-button {
     background-color: #09B2CB;
+}
+
+#blue-button:active {
+    background-color: rgba(9, 178, 203, 0.6);
 }
 
 #violet-button {
     background-color: #C4008C;
 }
 
+#violet-button:active {
+    background-color: rgba(196, 0, 140, 0.6);
+}
+
 #red-button {
     background-color: #F21B3F;
+}
+
+#red-button:active {
+    background-color: rgba(242, 27, 63, 0.6);
 }
