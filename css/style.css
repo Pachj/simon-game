@@ -18,14 +18,19 @@ html {
 }
 
 .game-field { /* ToDo: add shadows */ /* FixMe: :active is not working if the field is in the sequence (has something to do with :before, :after?) */
-    height: 150px;
-    width: 150px;
+    height: 146px;
+    width: 146px;
     border: none;
+    margin: 2px;
     flex-direction: row;
 }
 
 .game-field:focus {
     outline: none;
+}
+
+.game-field:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 #green-button {
