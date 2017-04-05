@@ -3,8 +3,6 @@
  */
 
 // ToDo: disable the buttons
-// ToDo: highlight clicked button
-// ToDo: add sounds
 // ToDo: start button should change to restart
 
 $(document).ready(function() {
