@@ -11,17 +11,25 @@
 </head>
 <body>
 <div class="flex-container" id="app">
-    <div class="flex-container">
-        <button id="start">Start</button>
-        <label class="switch">
-            <input type="checkbox" id="strict">
-            <div class="slider"></div>
-        </label>
-        <label class="switch">
-            <input type="checkbox" id="on-off">
-            <div class="slider"></div>
-        </label>
-        <p id="round-counter">0</p>
+    <div class="flex-container" id="controls">
+        <div class="flex-container column switch-box" id="strict-box">
+            <p>Strict Mode</p>
+            <label class="switch">
+                <input type="checkbox" id="strict">
+                <div class="slider"></div>
+            </label>
+        </div>
+        <div class="flex-container column" id="information-box">
+            <p id="round-counter">0</p>
+            <button id="start">Start</button>
+        </div>
+        <div class="flex-container column switch-box" id="power-box">
+            <p>Power</p>
+            <label class="switch">
+                <input type="checkbox" id="on-off">
+                <div class="slider"></div>
+            </label>
+        </div>
     </div>
     <div class="flex-container">
         <div class="flex-container game-field-row">
