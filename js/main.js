@@ -2,7 +2,6 @@
  * Created by Henry on 03.04.17.
  */
 
-// ToDo: disable the buttons
 // ToDo: start button should change to restart
 
 $(document).ready(function() {
@@ -87,6 +86,7 @@ function gameController(enteredField) {
   if (enteredField === sequence[enteredFieldsCounter]) {
     enteredFieldsCounter++;
     if (enteredFieldsCounter >= sequence.length) {
+      $('.game-field').prop('disabled', true);
       enteredFieldsCounter = 0;
       window.setTimeout(pickNewField, 1000);
     }
@@ -128,6 +128,8 @@ function showSequence() {
     if (fieldCounter < sequence.length) {
       actualField = sequence[fieldCounter];
       window.setTimeout(showField, 500);
+    } else {
+      $('.game-field').prop('disabled', false);
     }
   }
 
