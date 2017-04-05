@@ -10,6 +10,7 @@
 $(document).ready(function() {
   $('#start').click(function() {
     if (!isRunning && isEnabled) {
+      isRunning = true;
       pickNewField();
     }
   });
@@ -37,7 +38,7 @@ $(document).ready(function() {
 
   $('#strict').click(function() {
     if (!isRunning) { // ToDo: needs to be tested
-      isStrict = !isRunning;
+      isStrict = !isStrict;
     }
   });
 
@@ -46,12 +47,16 @@ $(document).ready(function() {
   });
 
   $('#on-off').click(function() {
-    if (!isEnabled) {
-      isEnabled = true;
-      $('#on-off').prop('checked', true);
+    if (!isRunning) {
+      if (!isEnabled) {
+        isEnabled = true;
+        $('#on-off').prop('checked', true);
+      } else {
+        isEnabled = false;
+        $('#on-off').prop('checked', false);
+      }
     } else {
-      isEnabled = false;
-      $('#on-off').prop('checked', false);
+      endGame();
     }
   });
 });
@@ -176,6 +181,7 @@ function endGame() {
   roundCounter = 0;
   sequence = [];
   enteredFieldsCounter = 0;
+  isRunning = false;
   displayRoundCounter();
 }
 
@@ -183,7 +189,7 @@ function endGame() {
  * @param {Object} enteredField - the field who the player has selected
  */
 function highlightInput(enteredField) { // ToDo: needs to be refactored because if have for the sequence the same code
-  // shows the entered field
+                                        // shows the entered field
   function showField() {
     const highlightColors = [
       'rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)',
