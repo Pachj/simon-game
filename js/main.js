@@ -5,66 +5,6 @@
 // ToDo: add timeout
 // ToDo: error sound
 
-$(document).ready(function() {
-  $('#start').click(function() {
-    if (!isRunning && isEnabled) {
-      isRunning = true;
-      pickNewField();
-    }
-  });
-
-  $('.game-field').click(function() {
-    let enteredField;
-    switch (this.id) {
-      case 'green-button':
-        enteredField = fields[0];
-        break;
-      case 'blue-button':
-        enteredField = fields[1];
-        break;
-      case 'violet-button':
-        enteredField = fields[2];
-        break;
-      case 'red-button':
-        enteredField = fields[3];
-        break;
-    }
-    enteredField.sound.play();
-    highlightInput(enteredField);
-    gameController(enteredField);
-  });
-
-  $('#strict').click(function() {
-    if (!isRunning) { // ToDo: needs to be tested
-      if (!isStrict) {
-        isStrict = true;
-        $('#strict').prop('checked', true);
-      } else {
-        isStrict = false;
-        $('#strict').prop('checked', false);
-      }
-    }
-  });
-
-  $('#stop').click(function() {
-    endGame();
-  });
-
-  $('#on-off').click(function() {
-    if (!isRunning) {
-      if (!isEnabled) {
-        isEnabled = true;
-        $('#on-off').prop('checked', true);
-      } else {
-        isEnabled = false;
-        $('#on-off').prop('checked', false);
-      }
-    } else {
-      endGame();
-    }
-  });
-});
-
 let fields = [
   {
     id: '#green-button',
@@ -96,10 +36,71 @@ let sequence = [];
 let isRunning = false;
 // whether the game is in strict mode
 let isStrict = false;
-
+// whether the game is enabled
 let isEnabled = false;
-
+// the number of fields the user has entered
 let enteredFieldsCounter = 0;
+
+$(document).ready(function() {
+  // starts a new game
+  $('#start').click(function() {
+    if (!isRunning && isEnabled) {
+      isRunning = true;
+      pickNewField();
+    }
+  });
+
+  // handles when the user clicks on a field
+  $('.game-field').click(function() {
+    let enteredField;
+    switch (this.id) {
+      case 'green-button':
+        enteredField = fields[0];
+        break;
+      case 'blue-button':
+        enteredField = fields[1];
+        break;
+      case 'violet-button':
+        enteredField = fields[2];
+        break;
+      case 'red-button':
+        enteredField = fields[3];
+        break;
+    }
+    // plays the sound of the field
+    enteredField.sound.play();
+    highlightInput(enteredField);
+    gameController(enteredField);
+  });
+
+  // toggles the strict mode
+  $('#strict').click(function() {
+    if (!isRunning) { // ToDo: needs to be tested
+      if (!isStrict) {
+        isStrict = true;
+        $('#strict').prop('checked', true);
+      } else {
+        isStrict = false;
+        $('#strict').prop('checked', false);
+      }
+    }
+  });
+
+  // toggles whether the game is enabled or not
+  $('#on-off').click(function() {
+    if (!isRunning) {
+      if (!isEnabled) {
+        isEnabled = true;
+        $('#on-off').prop('checked', true);
+      } else {
+        isEnabled = false;
+        $('#on-off').prop('checked', false);
+      }
+    } else {
+      endGame();
+    }
+  });
+});
 
 // picks a new field
 function pickNewField() {
@@ -110,6 +111,7 @@ function pickNewField() {
   showSequence();
 }
 
+// displays the length of the sequence
 function displayRoundCounter() {
   $('#round-counter').html(roundCounter);
 }
@@ -162,6 +164,8 @@ function showSequence() {
 
     if (fieldCounter < sequence.length) {
       actualField = sequence[fieldCounter];
+
+      // kills this function if the game has been disabled
       if (!isRunning) {
         return;
       }
