@@ -21,6 +21,12 @@ html {
     width: 300px;
 }
 
+h1 {
+    font-size: 50px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 p {
     text-align: center;
 }
@@ -32,6 +38,26 @@ button {
 
 button:focus {
     outline: none;
+}
+
+.green {
+    color: #29BF12;
+}
+
+.blue {
+    color: #09B2CB;
+}
+
+.violet {
+    color: #C4008C;
+}
+
+.red {
+    color: #F21B3F;
+}
+
+.orange {
+    color: #F75C03;
 }
 
 #controls {
@@ -49,6 +75,7 @@ button:focus {
 .switch-title {
     font-size: 15px;
     margin : 5px 0 5px 0;
+    text-transform: lowercase;
 }
 
 #strict-box {
@@ -70,6 +97,7 @@ button:focus {
 }
 
 #start {
+    text-transform: lowercase;
     border: none;
     background: none;
     font-size: 25px;
