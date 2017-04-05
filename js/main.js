@@ -159,6 +159,7 @@ function resetGame() { // ToDo: add delay
   pickNewField();
 }
 
+// ends the game
 function endGame() {
   roundCounter = 0;
   sequence = [];
@@ -166,8 +167,11 @@ function endGame() {
   displayRoundCounter();
 }
 
-function highlightInput(enteredField) {
-  // shows the actual field
+/** highlights the entered field
+ * @param {Object} enteredField - the field who the player has selected
+ */
+function highlightInput(enteredField) { // ToDo: needs to be refactored because if have for the sequence the same code
+  // shows the entered field
   function showField() {
     const highlightColors = [
       'rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)',
@@ -178,7 +182,7 @@ function highlightInput(enteredField) {
     window.setTimeout(resetField, 1000);
   }
 
-  // resets the actual field to its normal color
+  // resets the entered field to its normal color
   function resetField() {
     const originalColors = ['#29BF12', '#09B2CB', '#C4008C', '#F21B3F'];
     $(enteredField.id).
