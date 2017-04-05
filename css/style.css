@@ -57,10 +57,16 @@ button:focus {
 
 #information-box { /* ToDo: vertical alignment */
     width: 92px;
+    justify-content: flex-end;
 }
 
 #round-counter {
     display: none;
+    border: none;
+    background: none;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
 }
 
 #start {
