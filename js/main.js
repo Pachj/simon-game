@@ -46,6 +46,8 @@ $(document).ready(function() {
   $('#start').click(function() {
     if (!isRunning && isEnabled) {
       isRunning = true;
+      $('#start').fadeOut('slow');
+      $('#round-counter').fadeIn('slow');
       pickNewField();
     }
   });
@@ -194,6 +196,9 @@ function endGame() {
   enteredFieldsCounter = 0;
   isRunning = false;
   displayRoundCounter();
+
+  $('#start').fadeIn('slow');
+  $('#round-counter').fadeOut('slow');
 }
 
 /** highlights the entered field
