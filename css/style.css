@@ -87,6 +87,7 @@ button:focus {
 #information-box { /* ToDo: vertical alignment */
     width: 92px;
     justify-content: flex-end;
+    align-items: center;
 }
 
 #round-counter {
@@ -102,6 +103,9 @@ button:focus {
     text-transform: lowercase;
     border: none;
     background: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
     font-size: 25px;
     font-weight: 700;
     text-shadow: 0 3px 3px rgba(0, 0, 0, 0.23);
