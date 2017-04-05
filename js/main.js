@@ -39,6 +39,10 @@ $(document).ready(function() {
       isStrict = !isRunning;
     }
   });
+
+  $('#stop').click(function() {
+    endGame();
+  });
 });
 
 let fields = [
@@ -152,4 +156,11 @@ function resetGame() { // ToDo: add delay
   enteredFieldsCounter = 0;
 
   pickNewField();
+}
+
+function endGame() {
+  roundCounter = 0;
+  sequence = [];
+  enteredFieldsCounter = 0;
+  displayRoundCounter();
 }
