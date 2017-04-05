@@ -27,6 +27,7 @@ p {
 
 button {
     font-family: 'Inconsolata', monospace;
+    cursor: pointer;
 }
 
 button:focus {
