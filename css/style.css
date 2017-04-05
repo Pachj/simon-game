@@ -45,6 +45,11 @@ p {
     width: 52px;
 }
 
+#start {
+    border: none;
+    background-color: #ABFF4F;
+}
+
 #power-box {
     align-items: flex-end;
 }
