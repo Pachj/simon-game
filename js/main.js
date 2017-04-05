@@ -38,7 +38,13 @@ $(document).ready(function() {
 
   $('#strict').click(function() {
     if (!isRunning) { // ToDo: needs to be tested
-      isStrict = !isStrict;
+      if (!isStrict) {
+        isStrict = true;
+        $('#strict').prop('checked', true);
+      } else {
+        isStrict = false;
+        $('#strict').prop('checked', false);
+      }
     }
   });
 
@@ -189,7 +195,7 @@ function endGame() {
  * @param {Object} enteredField - the field who the player has selected
  */
 function highlightInput(enteredField) { // ToDo: needs to be refactored because if have for the sequence the same code
-                                        // shows the entered field
+  // shows the entered field
   function showField() {
     const highlightColors = [
       'rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)',
