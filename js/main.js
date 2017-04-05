@@ -2,9 +2,7 @@
  * Created by Henry on 03.04.17.
  */
 
-// ToDo: start button to stop
 // ToDo: add timeout
-// ToDo: strict as toggle
 // ToDo: error sound
 
 $(document).ready(function() {
@@ -165,6 +163,9 @@ function showSequence() {
     if (fieldCounter < sequence.length) {
       actualField = sequence[fieldCounter];
       window.setTimeout(showField, 500);
+      if (!isRunning) {
+        return;
+      }
     } else {
       $('.game-field').prop('disabled', false);
     }
