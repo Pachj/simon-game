@@ -11,45 +11,47 @@
 </head>
 <body>
 <div class="flex-container" id="app">
-    <div class="flex-container">
-        <h1><span class="green">s</span><span class="blue">i</span><span
-                class="violet">m</span><span class="red">o</span><span
-                class="orange">n </span><span class="green">g</span><span
-                class="blue">a</span><span
-                class="violet">m</span><span class="red">e</span></h1>
-    </div>
-    <div class="flex-container" id="controls">
-        <div class="flex-container column switch-box" id="strict-box">
-            <p class="switch-title">Strict Mode</p>
-            <label class="switch">
-                <input type="checkbox" id="strict">
-                <span class="slider"></span>
-            </label>
+    <div>
+        <div class="flex-container">
+            <h1><span class="green">s</span><span class="blue">i</span><span
+                    class="violet">m</span><span class="red">o</span><span
+                    class="orange">n </span><span class="green">g</span><span
+                    class="blue">a</span><span
+                    class="violet">m</span><span class="red">e</span></h1>
         </div>
-        <div class="flex-container column" id="information-box">
-            <p id="round-counter">0</p>
-            <button id="start">Start</button>
+        <div class="flex-container" id="controls">
+            <div class="flex-container column switch-box" id="strict-box">
+                <p class="switch-title">Strict Mode</p>
+                <label class="switch">
+                    <input type="checkbox" id="strict">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex-container column" id="information-box">
+                <p id="round-counter">0</p>
+                <button id="start">Start</button>
+            </div>
+            <div class="flex-container column switch-box" id="power-box">
+                <p class="switch-title">Power</p>
+                <label class="switch">
+                    <input type="checkbox" id="on-off">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
-        <div class="flex-container column switch-box" id="power-box">
-            <p class="switch-title">Power</p>
-            <label class="switch">
-                <input type="checkbox" id="on-off">
-                <span class="slider"></span>
-            </label>
+        <div class="flex-container">
+            <div class="flex-container game-field-row">
+                <button class="game-field" id="green-button" disabled></button>
+                <button class="game-field" id="blue-button" disabled></button>
+            </div>
+            <div class="flex-container game-field-row">
+                <button class="game-field" id="violet-button" disabled></button>
+                <button class="game-field" id="red-button" disabled></button>
+            </div>
         </div>
-    </div>
-    <div class="flex-container">
-        <div class="flex-container game-field-row">
-            <button class="game-field" id="green-button" disabled></button>
-            <button class="game-field" id="blue-button" disabled></button>
+        <div class="flex-container">
+            <p>by Henry Joerg</p>
         </div>
-        <div class="flex-container game-field-row">
-            <button class="game-field" id="violet-button" disabled></button>
-            <button class="game-field" id="red-button" disabled></button>
-        </div>
-    </div>
-    <div class="flex-container">
-        <p>by Henry Joerg</p>
     </div>
 </div>
 </body>

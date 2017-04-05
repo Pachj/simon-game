@@ -16,9 +16,11 @@ html {
     flex-direction: column;
 }
 
-#app { /* ToDo: align vertical */
+#app {
     margin: auto;
     width: 300px;
+    height: 100vh;
+    align-items: center;
 }
 
 h1 {
