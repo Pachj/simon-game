@@ -3,6 +3,8 @@
  */
 
 // ToDo: start button should change to restart
+// ToDo: start button to stop
+// ToDo: add timeout
 
 $(document).ready(function() {
   $('#start').click(function() {
