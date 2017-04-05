@@ -9,7 +9,7 @@
 
 $(document).ready(function() {
   $('#start').click(function() {
-    if (!isRunning) {
+    if (!isRunning && isEnabled) {
       pickNewField();
     }
   });
@@ -44,6 +44,16 @@ $(document).ready(function() {
   $('#stop').click(function() {
     endGame();
   });
+
+  $('#on-off').click(function() {
+    if (!isEnabled) {
+      isEnabled = true;
+      $('#on-off').prop('checked', true);
+    } else {
+      isEnabled = false;
+      $('#on-off').prop('checked', false);
+    }
+  });
 });
 
 let fields = [
@@ -77,6 +87,8 @@ let sequence = [];
 let isRunning = false;
 // whether the game is in strict mode
 let isStrict = false;
+
+let isEnabled = false;
 
 let enteredFieldsCounter = 0;
 
