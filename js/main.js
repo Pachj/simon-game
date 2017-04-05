@@ -162,10 +162,10 @@ function showSequence() {
 
     if (fieldCounter < sequence.length) {
       actualField = sequence[fieldCounter];
-      window.setTimeout(showField, 500);
       if (!isRunning) {
         return;
       }
+      window.setTimeout(showField, 500);
     } else {
       $('.game-field').prop('disabled', false);
     }
