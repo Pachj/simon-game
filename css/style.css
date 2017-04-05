@@ -17,7 +17,7 @@ html {
     width: 300px;
 }
 
-.game-field { /* ToDo: add shadows */ /* FixMe: :active is not working if the field is in the sequence */
+.game-field { /* ToDo: add shadows */ /* FixMe: :active is not working if the field is in the sequence (has something to do with :before, :after?) */
     height: 150px;
     width: 150px;
     border: none;
