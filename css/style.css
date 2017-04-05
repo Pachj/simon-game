@@ -46,6 +46,11 @@ button:focus {
     margin-right: 2px;
 }
 
+.switch-title {
+    font-size: 15px;
+    margin : 5px 0 5px 0;
+}
+
 #strict-box {
     align-items: flex-start;
 }
