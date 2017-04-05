@@ -50,22 +50,22 @@ let fields = [
   {
     id: '#green-button',
     value: 0,
-    sound: new Audio('sounds/SimonsGameC.mp3'),
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
   },
   {
     id: '#blue-button',
     value: 1,
-    sound: new Audio('sounds/SimonsGameA.mp3'),
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
   },
   {
     id: '#violet-button',
     value: 2,
-    sound: new Audio('sounds/SimonsGameF.mp3'),
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
   },
   {
     id: '#red-button',
     value: 3,
-    sound: new Audio('sounds/SimonsGameD.mp3'),
+    sound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
   },
 ];
 
