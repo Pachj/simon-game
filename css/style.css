@@ -21,14 +21,11 @@ html {
     height: 150px;
     width: 150px;
     border: none;
+    flex-direction: row;
 }
 
 .game-field:focus {
     outline: none;
-}
-
-.game-field { /* ToDo: whats this!? */
-    flex-direction: row;
 }
 
 #green-button {
