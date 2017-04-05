@@ -31,6 +31,7 @@ $(document).ready(function() {
         break;
     }
     enteredField.sound.play();
+    highlightInput(enteredField);
     gameController(enteredField);
   });
 
@@ -163,4 +164,26 @@ function endGame() {
   sequence = [];
   enteredFieldsCounter = 0;
   displayRoundCounter();
+}
+
+function highlightInput(enteredField) {
+  // shows the actual field
+  function showField() {
+    const highlightColors = [
+      'rgba(41, 191, 18, 0.6)', 'rgba(9, 178, 203, 0.6)',
+      'rgba(196, 0, 140, 0.6)', 'rgba(242, 27, 63, 0.6)'];
+
+    $(enteredField.id).
+        css('background-color', highlightColors[enteredField.value]);
+    window.setTimeout(resetField, 1000);
+  }
+
+  // resets the actual field to its normal color
+  function resetField() {
+    const originalColors = ['#29BF12', '#09B2CB', '#C4008C', '#F21B3F'];
+    $(enteredField.id).
+        css('background-color', originalColors[enteredField.value]);
+  }
+
+  showField();
 }
