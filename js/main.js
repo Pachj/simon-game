@@ -5,6 +5,7 @@
 // ToDo: start button should change to restart
 // ToDo: start button to stop
 // ToDo: add timeout
+// ToDo: strict as toggle
 
 $(document).ready(function() {
   $('#start').click(function() {
@@ -31,6 +32,12 @@ $(document).ready(function() {
     }
     enteredField.sound.play();
     gameController(enteredField);
+  });
+
+  $('#strict').click(function() {
+    if (!isRunning) { // ToDo: needs to be tested
+      isStrict = !isRunning;
+    }
   });
 });
 
