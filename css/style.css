@@ -154,7 +154,7 @@ button:focus {
     border-color: #F21B3F;
 }
 
-/* On/Off switch */ /* ToDo: needs to be styled */
+/* On/Off switch */
 .switch {
     position: relative;
     display: inline-block;

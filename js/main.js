@@ -2,9 +2,6 @@
  * Created by Henry on 03.04.17.
  */
 
-// ToDo: add timeout
-// ToDo: error sound
-
 let fields = [
   {
     id: '#green-button',
@@ -181,7 +178,7 @@ function showSequence() {
 }
 
 // resets the game and starts a new sequence
-function resetGame() { // ToDo: add delay
+function resetGame() {
   roundCounter = 0;
   displayRoundCounter();
   sequence = [];
@@ -205,7 +202,7 @@ function endGame() {
 /** highlights the entered field
  * @param {Object} enteredField - the field who the player has selected
  */
-function highlightInput(enteredField) { // ToDo: needs to be refactored because if have for the sequence the same code
+function highlightInput(enteredField) {
   // shows the entered field
   function showField() {
     const highlightColors = [
