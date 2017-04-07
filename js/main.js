@@ -183,10 +183,11 @@ function showSequence() {
 // resets the game and starts a new sequence
 function resetGame() { // ToDo: add delay
   roundCounter = 0;
+  displayRoundCounter();
   sequence = [];
   enteredFieldsCounter = 0;
 
-  pickNewField();
+  window.setTimeout(pickNewField, 2000);
 }
 
 // ends the game
