@@ -43,6 +43,7 @@ $(document).ready(function() {
   $('#start').click(function() {
     if (!isRunning && isEnabled) {
       isRunning = true;
+      $('#strict').prop('disabled', true);
       $('#start').fadeOut('slow');
       $('#round-counter').fadeIn('slow');
       pickNewField();
@@ -94,9 +95,11 @@ $(document).ready(function() {
       } else {
         isEnabled = false;
         $('#on-off').prop('checked', false);
+        $('#strict').prop('disabled', false);
       }
     } else {
       endGame();
+      $('#strict').prop('disabled', false);
     }
   });
 });
