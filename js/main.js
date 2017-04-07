@@ -29,7 +29,7 @@ let fields = [
 ];
 
 // counter of how many fields are in the sequence
-let roundCounter = 0; // ToDo: could be removed? sequence.length
+let roundCounter = 0;
 // the sequence of fields who the player has to repeat
 let sequence = [];
 // whether the game is running
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
   // toggles the strict mode
   $('#strict').click(function() {
-    if (!isRunning) { // ToDo: needs to be tested
+    if (!isRunning) {
       if (!isStrict) {
         isStrict = true;
         $('#strict').prop('checked', true);
@@ -134,7 +134,7 @@ function gameController(enteredField) {
       resetGame();
     } else {
       enteredFieldsCounter = 0;
-      showSequence(); // ToDo: add delay
+      window.setTimeout(showSequence, 1500);
     }
   }
 }

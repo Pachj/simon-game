@@ -84,7 +84,7 @@ button:focus {
     align-items: flex-start;
 }
 
-#information-box { /* ToDo: vertical alignment */
+#information-box {
     width: 92px;
     justify-content: flex-end;
     align-items: center;
@@ -120,7 +120,7 @@ button:focus {
     align-items: flex-end;
 }
 
-.game-field { /* FixMe: :active is not working if the field is in the sequence (has something to do with :before, :after?) */
+.game-field {
     height: 146px;
     width: 146px;
     border: 4px solid black;
